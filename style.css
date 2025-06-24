@@ -1,29 +1,43 @@
+/* تنسيق عام */
 body {
     font-family: Arial, sans-serif;
     text-align: center;
     background-color: #f8f8f8;
     color: #333;
+    margin: 0;
+    padding: 0;
 }
 
+/* الرأس */
 header {
     background-color: #FFD700;
     padding: 20px;
 }
 
+header img {
+    display: block;
+    margin: 0 auto 10px;
+    max-width: 100%;
+    height: auto;
+}
+
 h1 {
-    font-size: 40px;
+    font-size: 36px;
     color: white;
     text-shadow: 0 0 10px black;
+    margin: 10px 0;
 }
 
 .welcome {
-    font-size: 22px;
+    font-size: 20px;
     font-weight: bold;
     margin-top: 10px;
 }
 
+/* الأقسام */
 .categories {
     display: flex;
+    flex-wrap: wrap;
     justify-content: center;
     gap: 20px;
     padding: 20px;
@@ -36,6 +50,11 @@ h1 {
     box-shadow: 0 0 10px gray;
     width: 200px;
     text-align: center;
+    transition: transform 0.3s ease;
+}
+
+.category:hover {
+    transform: scale(1.05);
 }
 
 .category img {
@@ -50,15 +69,30 @@ h1 {
     font-weight: bold;
 }
 
+/* التذييل */
 footer {
     background-color: #333;
     color: white;
-    padding: 10px;
-    margin-top: 20px;
+    padding: 15px;
+    margin-top: 30px;
 }
-header img {
-    display: block;
-    margin: 0 auto 10px;
-    max-width: 100%;
-    height: auto;
+
+/* التجاوب مع الجوال */
+@media (max-width: 600px) {
+    h1 {
+        font-size: 26px;
+    }
+
+    .welcome {
+        font-size: 16px;
+    }
+
+    .category {
+        width: 90%;
+    }
+
+    .category img {
+        width: 80px;
+        height: 80px;
+    }
 }
