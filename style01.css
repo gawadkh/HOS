@@ -1,0 +1,88 @@
+/* تنسيق عام */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #fffbea; /* لون خلفية فاتح */
+    color: #333;
+    margin: 0;
+    padding: 0;
+}
+
+/* تنسيق الهيدر */
+header {
+    text-align: center;
+    padding: 20px;
+    background-color: #ffcc00; /* خلفية صفراء */
+    color: black;
+}
+header img {
+    display: block;
+    margin: 0 auto;
+    border-radius: 10px;
+}
+header h1 {
+    font-size: 28px;
+    font-weight: bold;
+}
+
+/* تنسيق المنتجات */
+.products {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 20px;
+    padding: 20px;
+}
+
+/* تصميم كل منتج */
+.product {
+    background-color: #000; /* خلفية سوداء */
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px #444;
+    width: 200px;
+    text-align: center;
+    transition: transform 0.3s ease-in-out;
+}
+.product:hover {
+    transform: scale(1.05);
+}
+
+/* تنسيق الصور داخل المنتجات */
+.product img {
+    width: 150px;
+    height: 150px;
+    border-radius: 10px;
+    border: 3px solid #ffcc00; /* إطار أصفر للصورة */
+}
+
+/* تنسيق نص المنتج */
+.product p {
+    font-size: 18px;
+    font-weight: bold;
+    margin-top: 10px;
+    color: #ffcc00; /* نص أصفر */
+}
+
+/* تصميم زر العودة للصفحة الرئيسية */
+.home-link {
+    display: inline-block;
+    padding: 12px 20px;
+    background-color: #000;
+    color: #ffcc00;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 5px;
+    transition: background-color 0.3s ease-in-out;
+}
+.home-link:hover {
+    background-color: #333;
+}
+
+/* تصميم الفوتر */
+footer {
+    text-align: center;
+    padding: 20px;
+    background-color: #ffcc00;
+    color: black;
+    font-size: 16px;
+}
