@@ -1,6 +1,3 @@
-/* --------------------- */
-/*        العام         */
-/* --------------------- */
 body {
   font-family: Arial, sans-serif;
   text-align: center;
@@ -10,9 +7,6 @@ body {
   padding: 0;
 }
 
-/* --------------------- */
-/*        الرأس         */
-/* --------------------- */
 header {
   background-color: #FFD700;
   padding: 20px;
@@ -35,9 +29,6 @@ h1 {
   margin-top: 10px;
 }
 
-/* --------------------- */
-/*        الأقسام       */
-/* --------------------- */
 .categories {
   display: flex;
   flex-wrap: wrap;
@@ -68,9 +59,6 @@ h1 {
   font-weight: bold;
 }
 
-/* --------------------- */
-/*        التذييل       */
-/* --------------------- */
 footer {
   background-color: #333;
   color: white;
@@ -78,9 +66,6 @@ footer {
   margin-top: 30px;
 }
 
-/* --------------------- */
-/*      الإعلان         */
-/* --------------------- */
 #popup {
   position: fixed;
   top: 0; left: 0;
@@ -118,9 +103,6 @@ footer {
   cursor: pointer;
 }
 
-/* --------------------- */
-/*    زر التقييم ⭐     */
-/* --------------------- */
 #rateContainer {
   position: fixed;
   bottom: 20px;
@@ -153,11 +135,10 @@ footer {
   font-size: 18px;
 }
 
-/* --------------------- */
-/*  مربع التقييم popup  */
-/* --------------------- */
 #ratingBox {
-  display: none;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(20px);
   position: fixed;
   bottom: 90px;
   right: 20px;
@@ -169,42 +150,9 @@ footer {
   box-shadow: 0 4px 16px rgba(0,0,0,0.3);
   text-align: center;
   font-weight: bold;
-  animation: slideUp 0.3s ease;
+  transition: all 0.3s ease;
 }
-#ratingBox .stars span {
-  font-size: 28px;
-  color: #ccc;
-  cursor: pointer;
-  transition: color 0.2s;
-}
-#ratingBox .stars span.selected {
-  color: #FFD700;
-}
-#thankMsg {
-  display: none;
-  margin-top: 10px;
-  color: green;
-  font-size: 14px;
-}
-
-/* --------------------- */
-/*      حركات بسيطة     */
-/* --------------------- */
-@keyframes slideUp {
-  from { opacity: 0; transform: translateY(20px); }
-  to { opacity: 1; transform: translateY(0); }
-}
-
-/* --------------------- */
-/* التجاوب مع الجوال 📱 */
-/* --------------------- */
-@media (max-width: 600px) {
-  h1 { font-size: 26px; }
-  .welcome { font-size: 16px; }
-  .category { width: 90%; }
-  .category img { width: 80px; height: 80px; }
-  #ratingBox {
-    width: 90%;
-    right: 5%;
-  }
-}
+#ratingBox.active {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
