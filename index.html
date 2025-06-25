@@ -8,33 +8,33 @@
 </head>
 <body>
 
-  <!-- إعلان منبثق -->
+  <!-- إعلان -->
   <div id="popup">
     <div id="popup-content">
-      <img src="222.png" alt="خلطات الأعشاب الطبية" />
+      <img src="222.png" alt="خلطات الأعشاب الطبية">
       <h2>جديدنا: خلطات الأعشاب الطبية 🌿</h2>
       <p>تركيبة طبيعية 100٪ بنكهة وجودة مركز بيت المونة!</p>
       <button id="closePopup">تخطي</button>
     </div>
   </div>
 
-  <!-- رأس الصفحة -->
+  <!-- رأس -->
   <header>
     <img src="111.png" alt="شعار بيت المونة" />
     <h1>مركز بيت المونة</h1>
     <p class="welcome">أهلاً بكم في مركزنا</p>
   </header>
 
-  <!-- أقسام المنتجات -->
+  <!-- الفئات -->
   <section class="categories">
     <h2>الصفحة الرئيسية</h2>
-    <div class="category"><a href="01.html"><img src="01.png" alt="" /><p>البقوليات</p></a></div>
-    <div class="category"><a href="02.html"><img src="02.png" alt="" /><p>البزورات والموالح</p></a></div>
-    <div class="category"><a href="03.html"><img src="03.png" alt="" /><p>المكسرات</p></a></div>
-    <div class="category"><a href="04.html"><img src="04.png" alt="" /><p>البهارات والتوابل</p></a></div>
+    <div class="category"><a href="01.html"><img src="01.png" alt=""><p>البقوليات</p></a></div>
+    <div class="category"><a href="02.html"><img src="02.png" alt=""><p>البزورات والموالح</p></a></div>
+    <div class="category"><a href="03.html"><img src="03.png" alt=""><p>المكسرات</p></a></div>
+    <div class="category"><a href="04.html"><img src="04.png" alt=""><p>البهارات والتوابل</p></a></div>
   </section>
 
-  <!-- التذييل -->
+  <!-- تذييل -->
   <footer>
     <p>شكراً لزيارتكم</p>
     <p>للتواصل: 016713319</p>
@@ -48,7 +48,7 @@
     </button>
   </div>
 
-  <!-- مستطيل التقييم -->
+  <!-- مربع التقييم -->
   <div id="ratingBox">
     <p>قيّم الموقع:</p>
     <div class="stars" id="stars">
@@ -63,24 +63,40 @@
     <p id="thankMsg">شكراً على تقييمك!</p>
   </div>
 
+  <!-- سكربت -->
   <script>
     document.addEventListener("DOMContentLoaded", () => {
-      // إخفاء البوب أب
-      document.getElementById('closePopup')
-        .addEventListener('click', () => document.getElementById('popup').style.display = 'none');
+      document.getElementById('closePopup').addEventListener('click', () => {
+        document.getElementById('popup').style.display = 'none';
+      });
 
-      const rateBtn     = document.getElementById('rateBtn');
-      const ratingBox   = document.getElementById('ratingBox');
-      const stars       = document.querySelectorAll('#stars span');
-      const visitsDisp  = document.getElementById('visits');
-      const thankMsg    = document.getElementById('thankMsg');
+      const rateBtn = document.getElementById('rateBtn');
+      const ratingBox = document.getElementById('ratingBox');
+      const stars = document.querySelectorAll('#stars span');
+      const visitsDisp = document.getElementById('visits');
+      const thankMsg = document.getElementById('thankMsg');
 
-      // إظهار/إخفاء مربع التقييم
       rateBtn.addEventListener('click', () => {
         ratingBox.classList.toggle('active');
       });
 
-      // عداد زوار وهمي
+      stars.forEach((star, idx) => {
+        star.addEventListener('mouseenter', () => {
+          stars.forEach((s, i) => s.classList.toggle('hovered', i <= idx));
+        });
+        star.addEventListener('mouseleave', () => {
+          stars.forEach(s => s.classList.remove('hovered'));
+        });
+        star.addEventListener('click', () => {
+          stars.forEach(s => s.classList.remove('selected'));
+          for (let i = 0; i <= idx; i++) {
+            stars[i].classList.add('selected');
+          }
+          thankMsg.style.display = 'block';
+          setTimeout(() => thankMsg.style.display = 'none', 2000);
+        });
+      });
+
       let visitors = Math.floor(1000 + Math.random() * 500);
       function updateVisitors() {
         visitors += Math.floor(Math.random() * 3);
@@ -88,24 +104,6 @@
       }
       updateVisitors();
       setInterval(updateVisitors, 4000);
-
-      // تفاعل النجوم
-      stars.forEach((star, idx) => {
-        // تأثير hover
-        star.addEventListener('mouseenter', () => {
-          stars.forEach((s, i) => s.classList.toggle('hovered', i <= idx));
-        });
-        star.addEventListener('mouseleave', () => {
-          stars.forEach(s => s.classList.remove('hovered'));
-        });
-        // تحديد التقييم
-        star.addEventListener('click', () => {
-          stars.forEach(s => s.classList.remove('selected'));
-          for (let i = 0; i <= idx; i++) stars[i].classList.add('selected');
-          thankMsg.style.display = 'block';
-          setTimeout(() => thankMsg.style.display = 'none', 2500);
-        });
-      });
     });
   </script>
 
