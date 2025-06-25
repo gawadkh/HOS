@@ -88,13 +88,17 @@
           stars.forEach(s => s.classList.remove('hovered'));
         });
         star.addEventListener('click', () => {
-          stars.forEach(s => s.classList.remove('selected'));
-          for (let i = 0; i <= idx; i++) {
-            stars[i].classList.add('selected');
-          }
-          thankMsg.style.display = 'block';
-          setTimeout(() => thankMsg.style.display = 'none', 2000);
-        });
+  stars.forEach(s => s.classList.remove('selected'));
+  for (let i = 0; i <= idx; i++) {
+    stars[i].classList.add('selected');
+  }
+
+  thankMsg.style.display = 'block';
+  setTimeout(() => {
+    thankMsg.style.display = 'none';
+    ratingBox.classList.remove('active'); // ⬅️ هذا هو الحل ✨
+  }, 2000);
+});
       });
 
       let visitors = Math.floor(1000 + Math.random() * 500);
