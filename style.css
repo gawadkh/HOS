@@ -1,108 +1,132 @@
-/* تنسيق عام */
+/* --------------------- */
+/*        العام         */
+/* --------------------- */
 body {
-    font-family: Arial, sans-serif;
-    text-align: center;
-    background-color: #f8f8f8;
-    color: #333;
-    margin: 0;
-    padding: 0;
+  font-family: Arial, sans-serif;
+  text-align: center;
+  background-color: #f8f8f8;
+  color: #333;
+  margin: 0;
+  padding: 0;
 }
 
-/* الرأس */
+/* --------------------- */
+/*        الرأس         */
+/* --------------------- */
 header {
-    background-color: #FFD700;
-    padding: 20px;
+  background-color: #FFD700;
+  padding: 20px;
 }
-
 header img {
-    display: block;
-    margin: 0 auto 10px;
-    max-width: 100%;
-    height: auto;
+  display: block;
+  margin: 0 auto 10px;
+  max-width: 100%;
+  height: auto;
 }
-
 h1 {
-    font-size: 36px;
-    color: white;
-    text-shadow: 0 0 10px black;
-    margin: 10px 0;
+  font-size: 36px;
+  color: white;
+  text-shadow: 0 0 10px black;
+  margin: 10px 0;
 }
-
 .welcome {
-    font-size: 20px;
-    font-weight: bold;
-    margin-top: 10px;
+  font-size: 20px;
+  font-weight: bold;
+  margin-top: 10px;
 }
 
-/* الأقسام */
+/* --------------------- */
+/*        الأقسام       */
+/* --------------------- */
 .categories {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 20px;
-    padding: 20px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+  padding: 20px;
 }
-
 .category {
-    background-color: white;
-    padding: 15px;
-    border-radius: 10px;
-    box-shadow: 0 0 10px gray;
-    width: 200px;
-    text-align: center;
-    transition: transform 0.3s ease;
+  background-color: white;
+  padding: 15px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px gray;
+  width: 200px;
+  text-align: center;
+  transition: transform 0.3s ease;
 }
-
 .category:hover {
-    transform: scale(1.05);
+  transform: scale(1.05);
 }
-
 .category img {
-    width: 100px;
-    height: 100px;
+  width: 100px;
+  height: 100px;
 }
-
 .category a {
-    text-decoration: none;
-    color: black;
-    font-size: 18px;
-    font-weight: bold;
+  text-decoration: none;
+  color: black;
+  font-size: 18px;
+  font-weight: bold;
 }
 
-/* التذييل */
+/* --------------------- */
+/*        التذييل       */
+/* --------------------- */
 footer {
-    background-color: #333;
-    color: white;
-    padding: 15px;
-    margin-top: 30px;
+  background-color: #333;
+  color: white;
+  padding: 15px;
+  margin-top: 30px;
 }
 
-/* التجاوب مع الجوال */
-@media (max-width: 600px) {
-    h1 {
-        font-size: 26px;
-    }
+/* --------------------- */
+/*      الإعلان         */
+/* --------------------- */
+#popup {
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background: rgba(0,0,0,0.6);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+}
+#popup-content {
+  background: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  max-width: 90%;
+  width: 350px;
+  text-align: center;
+  box-shadow: 0 0 10px rgba(0,0,0,0.2);
+}
+#popup-content img {
+  max-width: 100%;
+  border-radius: 8px;
+}
+#popup-content h2 {
+  margin: 15px 0 10px;
+  color: #2e7d32;
+}
+#popup-content button {
+  margin-top: 15px;
+  padding: 10px 20px;
+  background-color: #b71c1c;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
 
-    .welcome {
-        font-size: 16px;
-    }
-
-    .category {
-        width: 90%;
-    }
-
-    .category img {
-        width: 80px;
-        height: 80px;
-    }
-}  /* ← إغلاق صحيح لقسم @media */
+/* --------------------- */
+/*    زر التقييم ⭐     */
+/* --------------------- */
 #rateContainer {
   position: fixed;
   bottom: 20px;
   right: 20px;
   z-index: 999;
 }
-
 #rateBtn {
   display: flex;
   align-items: center;
@@ -118,11 +142,9 @@ footer {
   box-shadow: 0 4px 10px rgba(0,0,0,0.3);
   transition: transform 0.2s ease;
 }
-
 #rateBtn:hover {
   transform: scale(1.05);
 }
-
 .starCircle {
   background-color: black;
   color: gold;
@@ -131,19 +153,23 @@ footer {
   font-size: 18px;
 }
 
+/* --------------------- */
+/*  مربع التقييم popup  */
+/* --------------------- */
 #ratingBox {
   display: none;
   position: fixed;
-  bottom: 80px;
+  bottom: 90px;
   right: 20px;
   background: #fffbea;
   border: 2px solid #FFD700;
   padding: 15px;
   border-radius: 12px;
-  width: 240px;
+  width: 250px;
   box-shadow: 0 4px 16px rgba(0,0,0,0.3);
   text-align: center;
   font-weight: bold;
+  animation: slideUp 0.3s ease;
 }
 #ratingBox .stars span {
   font-size: 28px;
@@ -154,12 +180,31 @@ footer {
 #ratingBox .stars span.selected {
   color: #FFD700;
 }
+#thankMsg {
+  display: none;
+  margin-top: 10px;
+  color: green;
+  font-size: 14px;
+}
+
+/* --------------------- */
+/*      حركات بسيطة     */
+/* --------------------- */
 @keyframes slideUp {
   from { opacity: 0; transform: translateY(20px); }
   to { opacity: 1; transform: translateY(0); }
 }
 
-#ratingBox {
-  animation: slideUp 0.3s ease;
+/* --------------------- */
+/* التجاوب مع الجوال 📱 */
+/* --------------------- */
+@media (max-width: 600px) {
+  h1 { font-size: 26px; }
+  .welcome { font-size: 16px; }
+  .category { width: 90%; }
+  .category img { width: 80px; height: 80px; }
+  #ratingBox {
+    width: 90%;
+    right: 5%;
+  }
 }
-
