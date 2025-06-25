@@ -95,6 +95,7 @@ footer {
         width: 80px;
         height: 80px;
     }
+}  /* ← إغلاق صحيح لقسم @media */
 #rateContainer {
   position: fixed;
   bottom: 20px;
