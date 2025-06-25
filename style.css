@@ -1,3 +1,4 @@
+/* تنسيقات عامة */
 body {
   font-family: Arial, sans-serif;
   background-color: #f8f8f8;
@@ -6,8 +7,6 @@ body {
   padding: 0;
   text-align: center;
 }
-
-/* الرأس */
 header {
   background-color: #FFD700;
   padding: 20px;
@@ -22,7 +21,6 @@ h1 {
   font-size: 36px;
   color: white;
   text-shadow: 0 0 10px black;
-  margin: 10px 0;
 }
 .welcome {
   font-size: 20px;
@@ -68,7 +66,7 @@ footer {
   margin-top: 30px;
 }
 
-/* الإعلان المنبثق */
+/* منبثق الإعلان */
 #popup {
   position: fixed;
   top: 0; left: 0;
@@ -141,24 +139,4 @@ footer {
 
 /* مستطيل التقييم */
 #ratingBox {
-  opacity: 0;
-  visibility: hidden;
-  transform: translateY(20px);
-  transition: all 0.3s ease;
-  position: fixed;
-  bottom: 90px;
-  right: 20px;
-  background: #fffbea;
-  border: 2px solid #FFD700;
-  padding: 15px;
-  border-radius: 12px;
-  width: 250px;
-  box-shadow: 0 4px 16px rgba(0,0,0,0.3);
-  text-align: center;
-  font-weight: bold;
-  z-index: 998;
-}
-#ratingBox.active {
-  opacity: 1;
-  visibility: visible;
-  transform: translateY(
+  opacity
