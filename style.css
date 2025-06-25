@@ -6,8 +6,6 @@ body {
   margin: 0;
   padding: 0;
 }
-
-/* رأس الصفحة */
 header {
   background: #FFD700;
   padding: 20px;
@@ -19,17 +17,16 @@ header img {
   margin: 0 auto 10px;
 }
 h1 {
-  font-size: 36px;
-  color: #fff;
+  font-size: 32px;
+  color: white;
   text-shadow: 0 0 10px black;
+  margin: 10px 0;
 }
 .welcome {
-  font-size: 20px;
+  font-size: 18px;
   font-weight: bold;
   margin-top: 10px;
 }
-
-/* الفئات */
 .categories {
   display: flex;
   flex-wrap: wrap;
@@ -41,23 +38,19 @@ h1 {
   background: #fff;
   padding: 15px;
   border-radius: 10px;
-  box-shadow: 0 0 10px gray;
-  width: 200px;
+  box-shadow: 0 0 10px #aaa;
+  width: 180px;
   transition: transform 0.3s ease;
 }
 .category:hover { transform: scale(1.05); }
 .category img { width: 100px; height: 100px; }
 .category a { text-decoration: none; color: #000; font-weight: bold; }
-
-/* تذييل */
 footer {
   background: #333;
   color: white;
   padding: 15px;
   margin-top: 30px;
 }
-
-/* منبثق الإعلان */
 #popup {
   position: fixed;
   top: 0; left: 0;
@@ -69,59 +62,49 @@ footer {
   z-index: 9999;
 }
 #popup-content {
-  background: white;
+  background: #fff;
   padding: 20px;
   border-radius: 10px;
-  width: 350px;
-  max-width: 90%;
-  box-shadow: 0 0 10px rgba(0,0,0,0.3);
+  width: 300px;
+  text-align: center;
 }
-#popup-content img {
-  width: 100%;
-  border-radius: 8px;
-}
+#popup-content img { width: 100%; border-radius: 8px; }
 #popup-content button {
   margin-top: 15px;
   padding: 10px 20px;
-  background-color: #b71c1c;
+  background: #b71c1c;
   color: white;
   border: none;
   border-radius: 5px;
   cursor: pointer;
 }
-
-/* زر التقييم */
 #rateContainer {
   position: fixed;
   bottom: 20px;
   right: 20px;
-  z-index: 999;
+  z-index: 1000;
 }
 #rateBtn {
   display: flex;
   align-items: center;
-  gap: 10px;
+  gap: 8px;
   background: linear-gradient(to top right, #FFD700, #FFC107);
   color: black;
   border: 2px solid #333;
   border-radius: 25px;
   padding: 10px 16px;
   font-weight: bold;
-  font-size: 16px;
   cursor: pointer;
   box-shadow: 0 4px 10px rgba(0,0,0,0.2);
-  transition: transform 0.2s ease;
 }
 #rateBtn:hover { transform: scale(1.05); }
 .starCircle {
-  background-color: black;
+  background: black;
   color: gold;
   border-radius: 50%;
   padding: 6px 8px;
   font-size: 18px;
 }
-
-/* مربع التقييم */
 #ratingBox {
   position: fixed;
   bottom: 90px;
@@ -132,4 +115,34 @@ footer {
   border-radius: 12px;
   padding: 15px;
   text-align: center;
-  font-weight: bold
+  font-weight: bold;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(20px);
+  transition: all 0.3s ease;
+  z-index: 999;
+}
+#ratingBox.active {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+#ratingBox .stars span {
+  font-size: 28px;
+  color: #ccc;
+  cursor: pointer;
+  transition: color 0.2s;
+}
+#ratingBox .stars span.hovered,
+#ratingBox .stars span.selected {
+  color: #FFD700;
+}
+#thankMsg {
+  display: none;
+  margin-top: 10px;
+  color: green;
+  font-size: 14px;
+}
+@media (max-width: 600px) {
+  h1 { font-size: 24px; }
+  .welcome { font-size: 16
