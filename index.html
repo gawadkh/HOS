@@ -102,6 +102,49 @@
     <p>شكراً لزيارتكم</p>
     <p>للتواصل: 016713319</p>
   </footer>
+<!-- ⭐ زر التقييم -->
+<button id="rateBtn" title="قيّم الموقع">⭐</button>
+
+<!-- 📦 مربع التقييم -->
+<div id="ratingBox">
+  <p>قيّم الموقع:</p>
+  <div class="stars" id="stars">
+    <span data-value="1">★</span>
+    <span data-value="2">★</span>
+    <span data-value="3">★</span>
+    <span data-value="4">★</span>
+    <span data-value="5">★</span>
+  </div>
+  <p id="visits">عدد الزيارات: <strong>1284</strong></p>
+  <p id="avgRating">متوسط التقييم: <strong>4.3</strong> / 5</p>
+</div>
+<script>
+  const rateBtn = document.getElementById('rateBtn');
+  const ratingBox = document.getElementById('ratingBox');
+  const stars = document.querySelectorAll('#stars span');
+  const avgDisplay = document.getElementById('avgRating');
+
+  let ratingTotal = 21.5; // مجموع التقييمات (للحساب فقط)
+  let ratingCount = 5;    // عدد الأشخاص المقيّمين مبدئياً
+
+  rateBtn.addEventListener('click', () => {
+    ratingBox.style.display = (ratingBox.style.display === 'block') ? 'none' : 'block';
+  });
+
+  stars.forEach(star => {
+    star.addEventListener('click', () => {
+      const val = parseInt(star.getAttribute('data-value'));
+      stars.forEach(s => s.classList.remove('selected'));
+      for (let i = 0; i < val; i++) stars[i].classList.add('selected');
+
+      ratingTotal += val;
+      ratingCount++;
+      const avg = (ratingTotal / ratingCount).toFixed(1);
+      avgDisplay.innerHTML = `متوسط التقييم: <strong>${avg}</strong> / 5`;
+      alert(`شكراً على تقييمك ${val} نجوم!`);
+    });
+  });
+</script>
 
 </body>
 </html>
