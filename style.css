@@ -96,3 +96,42 @@ footer {
         height: 80px;
     }
 }
+#rateBtn {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  font-size: 28px;
+  background-color: black;
+  color: gold;
+  border: 2px solid gold;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  cursor: pointer;
+  z-index: 999;
+}
+
+#ratingBox {
+  display: none;
+  position: fixed;
+  bottom: 80px;
+  right: 20px;
+  background: #fff;
+  border: 2px solid black;
+  padding: 12px;
+  border-radius: 10px;
+  width: 220px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+  text-align: center;
+  z-index: 1000;
+}
+
+#ratingBox .stars span {
+  font-size: 26px;
+  color: #ccc;
+  cursor: pointer;
+}
+
+#ratingBox .stars span.selected {
+  color: gold;
+}
