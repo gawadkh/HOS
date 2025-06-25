@@ -1,14 +1,13 @@
-/* ===== عام ===== */
 body {
-  margin: 0;
-  padding: 0;
   font-family: Arial, sans-serif;
   text-align: center;
   background: #f8f8f8;
   color: #333;
+  margin: 0;
+  padding: 0;
 }
 
-/* ===== الرأس ===== */
+/* رأس الصفحة */
 header {
   background: #FFD700;
   padding: 20px;
@@ -20,18 +19,17 @@ header img {
   margin: 0 auto 10px;
 }
 h1 {
-  margin: 0;
   font-size: 36px;
   color: #fff;
-  text-shadow: 0 0 10px #000;
+  text-shadow: 0 0 10px black;
 }
 .welcome {
-  margin: 10px 0 0;
   font-size: 20px;
   font-weight: bold;
+  margin-top: 10px;
 }
 
-/* ===== الأقسام ===== */
+/* الفئات */
 .categories {
   display: flex;
   flex-wrap: wrap;
@@ -40,27 +38,26 @@ h1 {
   padding: 20px;
 }
 .category {
-  width: 200px;
   background: #fff;
   padding: 15px;
   border-radius: 10px;
-  box-shadow: 0 0 10px rgba(0,0,0,0.2);
+  box-shadow: 0 0 10px gray;
+  width: 200px;
   transition: transform 0.3s ease;
 }
 .category:hover { transform: scale(1.05); }
 .category img { width: 100px; height: 100px; }
-.category a { text-decoration: none; color: #333; }
-.category p { margin: 10px 0 0; font-weight: bold; }
+.category a { text-decoration: none; color: #000; font-weight: bold; }
 
-/* ===== التذييل ===== */
+/* تذييل */
 footer {
   background: #333;
-  color: #fff;
+  color: white;
   padding: 15px;
   margin-top: 30px;
 }
 
-/* ===== البوب أب ===== */
+/* منبثق الإعلان */
 #popup {
   position: fixed;
   top: 0; left: 0;
@@ -69,30 +66,31 @@ footer {
   display: flex;
   align-items: center;
   justify-content: center;
-  z-index: 10000;
+  z-index: 9999;
 }
 #popup-content {
-  background: #fff;
+  background: white;
   padding: 20px;
   border-radius: 10px;
   width: 350px;
   max-width: 90%;
-  text-align: center;
-  box-shadow: 0 0 10px rgba(0,0,0,0.2);
+  box-shadow: 0 0 10px rgba(0,0,0,0.3);
 }
-#popup-content img { max-width: 100%; border-radius: 8px; }
-#popup-content h2 { margin: 15px 0 10px; color: #2e7d32; }
+#popup-content img {
+  width: 100%;
+  border-radius: 8px;
+}
 #popup-content button {
   margin-top: 15px;
   padding: 10px 20px;
-  background: #b71c1c;
-  color: #fff;
+  background-color: #b71c1c;
+  color: white;
   border: none;
   border-radius: 5px;
   cursor: pointer;
 }
 
-/* ===== زر التقييم ===== */
+/* زر التقييم */
 #rateContainer {
   position: fixed;
   bottom: 20px;
@@ -102,28 +100,28 @@ footer {
 #rateBtn {
   display: flex;
   align-items: center;
-  gap: 8px;
-  background: linear-gradient(45deg, #FFD700,#FFC107);
-  color: #000;
+  gap: 10px;
+  background: linear-gradient(to top right, #FFD700, #FFC107);
+  color: black;
   border: 2px solid #333;
   border-radius: 25px;
   padding: 10px 16px;
   font-weight: bold;
+  font-size: 16px;
   cursor: pointer;
-  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
-  transition: transform 0.2s;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+  transition: transform 0.2s ease;
 }
 #rateBtn:hover { transform: scale(1.05); }
 .starCircle {
-  display: inline-block;
-  background: #000;
+  background-color: black;
   color: gold;
   border-radius: 50%;
   padding: 6px 8px;
   font-size: 18px;
 }
 
-/* ===== مستطيل التقييم ===== */
+/* مربع التقييم */
 #ratingBox {
   position: fixed;
   bottom: 90px;
@@ -133,48 +131,5 @@ footer {
   border: 2px solid #FFD700;
   border-radius: 12px;
   padding: 15px;
-  box-shadow: 0 4px 16px rgba(0,0,0,0.2);
   text-align: center;
-  font-weight: bold;
-  opacity: 0;
-  visibility: hidden;
-  transform: translateY(20px);
-  transition: all 0.3s ease;
-  z-index: 998;
-}
-#ratingBox.active {
-  opacity: 1;
-  visibility: visible;
-  transform: translateY(0);
-}
-
-/* النجوم */
-#ratingBox .stars span {
-  font-size: 28px;
-  color: #ccc;
-  cursor: pointer;
-  transition: color 0.2s;
-}
-#ratingBox .stars span.hovered,
-#ratingBox .stars span.selected {
-  color: #FFD700;
-}
-#thankMsg {
-  display: none;
-  margin-top: 10px;
-  color: green;
-  font-size: 14px;
-}
-
-/* ===== تجاوب الجوال ===== */
-@media (max-width: 600px) {
-  h1 { font-size: 28px; }
-  .welcome { font-size: 16px; }
-  .category { width: 90%; }
-  .category img { width: 80px; height: 80px; }
-  #ratingBox {
-    width: 90%;
-    right: 5%;
-    bottom: 80px;
-  }
-}
+  font-weight: bold
