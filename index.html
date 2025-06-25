@@ -8,7 +8,7 @@
 </head>
 <body>
 
-  <!-- إعلان منبثق -->
+  <!-- 🪧 إعلان ترحيبي -->
   <div id="popup">
     <div id="popup-content">
       <img src="222.png" alt="خلطات الأعشاب الطبية">
@@ -25,7 +25,7 @@
     <p class="welcome">أهلاً بكم في مركزنا</p>
   </header>
 
-  <!-- الأقسام -->
+  <!-- قائمة الفئات -->
   <section class="categories">
     <h2>الصفحة الرئيسية</h2>
     <div class="category"><a href="01.html"><img src="01.png" alt=""><p>البقوليات</p></a></div>
@@ -58,44 +58,45 @@
       <span data-value="4">★</span>
       <span data-value="5">★</span>
     </div>
-    <p id="visits">عدد الزوار: <strong>1234</strong></p>
+    <p id="visits">عدد الزوار: <strong>1245</strong></p>
     <p>متوسط التقييم: <strong>4.7</strong> / 5</p>
     <p id="thankMsg">شكراً على تقييمك!</p>
   </div>
 
-  <!-- السكربت -->
   <script>
-    const rateBtn = document.getElementById('rateBtn');
-    const ratingBox = document.getElementById('ratingBox');
-    const stars = document.querySelectorAll('#stars span');
-    const thankMsg = document.getElementById('thankMsg');
-    const visitsDisplay = document.getElementById('visits');
+    document.addEventListener("DOMContentLoaded", function () {
+      const rateBtn = document.getElementById('rateBtn');
+      const ratingBox = document.getElementById('ratingBox');
+      const stars = document.querySelectorAll('#stars span');
+      const visitsDisplay = document.getElementById('visits');
+      const thankMsg = document.getElementById('thankMsg');
 
-    // تبديل كلاس العرض
-    rateBtn.addEventListener('click', () => {
-      ratingBox.classList.toggle('active');
-    });
-
-    // التفاعل مع النجوم
-    stars.forEach(star => {
-      star.addEventListener('click', () => {
-        const val = parseInt(star.getAttribute('data-value'));
-        stars.forEach(s => s.classList.remove('selected'));
-        for (let i = 0; i < val; i++) stars[i].classList.add('selected');
-
-        thankMsg.style.display = 'block';
-        setTimeout(() => { thankMsg.style.display = 'none'; }, 3000);
+      // تبديل عرض مربع التقييم
+      rateBtn.addEventListener('click', () => {
+        ratingBox.classList.toggle('active');
       });
-    });
 
-    // عداد زوار وهمي
-    let visitors = Math.floor(1000 + Math.random() * 500);
-    function updateVisitors() {
-      visitors += Math.floor(Math.random() * 3);
-      visitsDisplay.innerHTML = `عدد الزوار: <strong>${visitors}</strong>`;
-    }
-    updateVisitors();
-    setInterval(updateVisitors, 4000);
+      // اختيار نجوم التقييم
+      stars.forEach(star => {
+        star.addEventListener('click', () => {
+          const val = parseInt(star.getAttribute('data-value'));
+          stars.forEach(s => s.classList.remove('selected'));
+          for (let i = 0; i < val; i++) stars[i].classList.add('selected');
+
+          thankMsg.style.display = 'block';
+          setTimeout(() => { thankMsg.style.display = 'none'; }, 3000);
+        });
+      });
+
+      // عداد زوار وهمي
+      let visitors = Math.floor(1000 + Math.random() * 500);
+      function updateVisitors() {
+        visitors += Math.floor(Math.random() * 3);
+        visitsDisplay.innerHTML = `عدد الزوار: <strong>${visitors}</strong>`;
+      }
+      updateVisitors();
+      setInterval(updateVisitors, 4000);
+    });
   </script>
 
 </body>
