@@ -7,6 +7,7 @@ body {
   padding: 0;
 }
 
+/* الرأس */
 header {
   background-color: #FFD700;
   padding: 20px;
@@ -29,6 +30,7 @@ h1 {
   margin-top: 10px;
 }
 
+/* الأقسام */
 .categories {
   display: flex;
   flex-wrap: wrap;
@@ -59,6 +61,7 @@ h1 {
   font-weight: bold;
 }
 
+/* التذييل */
 footer {
   background-color: #333;
   color: white;
@@ -66,6 +69,7 @@ footer {
   margin-top: 30px;
 }
 
+/* منبثق الإعلان */
 #popup {
   position: fixed;
   top: 0; left: 0;
@@ -103,6 +107,7 @@ footer {
   cursor: pointer;
 }
 
+/* زر التقييم */
 #rateContainer {
   position: fixed;
   bottom: 20px;
@@ -135,6 +140,7 @@ footer {
   font-size: 18px;
 }
 
+/* مربع التقييم */
 #ratingBox {
   opacity: 0;
   visibility: hidden;
@@ -155,4 +161,3 @@ footer {
 #ratingBox.active {
   opacity: 1;
   visibility: visible;
-  transform: translateY(0);
