@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>مركز بيت المونة</title>
-  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="style.css?v=1" />
 </head>
 <body>
 
@@ -18,14 +18,14 @@
     </div>
   </div>
 
-  <!-- رأس الصفحة -->
+  <!-- الرأس -->
   <header>
     <img src="111.png" alt="شعار" />
     <h1>مركز بيت المونة</h1>
     <p class="welcome">أهلاً بكم في مركزنا</p>
   </header>
 
-  <!-- أقسام -->
+  <!-- الأقسام -->
   <section class="categories">
     <h2>الصفحة الرئيسية</h2>
     <div class="category"><a href="#"><img src="01.png" alt=""><p>البقوليات</p></a></div>
@@ -66,9 +66,8 @@
   <!-- سكربت -->
   <script>
     document.addEventListener("DOMContentLoaded", () => {
-      document.getElementById('closePopup').addEventListener('click', () => {
+      document.getElementById('closePopup').onclick = () =>
         document.getElementById('popup').style.display = 'none';
-      });
 
       const rateBtn = document.getElementById('rateBtn');
       const ratingBox = document.getElementById('ratingBox');
@@ -106,7 +105,7 @@
         visitsDisp.innerHTML = `عدد الزوار: <strong>${visitors}</strong>`;
       }, 3000);
 
-      // يغلق المربع إذا ضغط المستخدم خارج المربع أو الزر على الموبايل
+      // إغلاق التقييم إذا ضغط بالخارج (مناسب للموبايل)
       document.addEventListener('click', function (e) {
         if (!ratingBox.contains(e.target) && !rateBtn.contains(e.target)) {
           ratingBox.classList.remove('active');
