@@ -1,131 +1,58 @@
-/* ===== تصميم عام ===== */
 body {
-  font-family: Arial, sans-serif;
-  text-align: center;
-  background: #f8f8f8;
-  color: #333;
-  margin: 0;
-  padding: 0;
+    font-family: Arial, sans-serif;
+    text-align: center;
+    background-color: #f8f8f8;
+    color: #333;
 }
+
 header {
-  background: #FFD700;
-  padding: 20px;
+    background-color: #FFD700;
+    padding: 20px;
 }
-header img {
-  max-width: 100%;
-  height: auto;
-  margin: 0 auto 10px;
-  display: block;
-}
+
 h1 {
-  font-size: 32px;
-  color: white;
-  text-shadow: 0 0 10px black;
+    font-size: 40px;
+    color: white;
+    text-shadow: 0 0 10px black;
 }
+
 .welcome {
-  font-size: 18px;
-  font-weight: bold;
-  margin-top: 10px;
+    font-size: 22px;
+    font-weight: bold;
+    margin-top: 10px;
 }
 
-/* ===== الأقسام ===== */
 .categories {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 20px;
-  padding: 20px;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    padding: 20px;
 }
+
 .category {
-  background: #fff;
-  padding: 15px;
-  border-radius: 10px;
-  box-shadow: 0 0 10px #aaa;
-  width: 180px;
-  transition: transform 0.3s ease;
+    background-color: white;
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px gray;
+    width: 200px;
+    text-align: center;
 }
-.category:hover { transform: scale(1.05); }
-.category img { width: 100px; height: 100px; }
-.category a { text-decoration: none; color: #000; font-weight: bold; }
 
-/* ===== التذييل ===== */
+.category img {
+    width: 100px;
+    height: 100px;
+}
+
+.category a {
+    text-decoration: none;
+    color: black;
+    font-size: 18px;
+    font-weight: bold;
+}
+
 footer {
-  background: #333;
-  color: white;
-  padding: 15px;
-  margin-top: 30px;
+    background-color: #333;
+    color: white;
+    padding: 10px;
+    margin-top: 20px;
 }
-
-/* ===== البوب أب ===== */
-#popup {
-  position: fixed;
-  top: 0; left: 0;
-  width: 100%; height: 100%;
-  background: rgba(0,0,0,0.6);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  z-index: 9999;
-}
-#popup-content {
-  background: #fff;
-  padding: 20px;
-  border-radius: 10px;
-  width: 300px;
-  text-align: center;
-}
-#popup-content img { width: 100%; border-radius: 8px; }
-#popup-content button {
-  margin-top: 15px;
-  padding: 10px 20px;
-  background: #b71c1c;
-  color: white;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-}
-
-/* ===== زر التقييم ===== */
-#rateContainer {
-  position: fixed;
-  bottom: 20px;
-  right: 20px;
-  z-index: 1000;
-}
-#rateBtn {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  background: linear-gradient(to top right, #FFD700, #FFC107);
-  color: black;
-  border: 2px solid #333;
-  border-radius: 25px;
-  padding: 10px 16px;
-  font-weight: bold;
-  cursor: pointer;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
-  touch-action: manipulation;
-}
-#rateBtn:hover { transform: scale(1.05); }
-.starCircle {
-  background: black;
-  color: gold;
-  border-radius: 50%;
-  padding: 6px 8px;
-  font-size: 18px;
-}
-
-/* ===== مستطيل التقييم ===== */
-#ratingBox {
-  position: fixed;
-  bottom: 90px;
-  right: 20px;
-  width: 250px;
-  background: #fffbea;
-  border: 2px solid #FFD700;
-  border-radius: 12px;
-  padding: 15px;
-  text-align: center;
-  font-weight: bold;
-  opacity: 0;
-  visibility:
