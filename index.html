@@ -8,7 +8,7 @@
 </head>
 <body>
 
-  <!-- إعلان ترحيبي -->
+  <!-- إعلان -->
   <div id="popup">
     <div id="popup-content">
       <img src="222.png" alt="خلطات الأعشاب الطبية">
@@ -48,7 +48,7 @@
     </button>
   </div>
 
-  <!-- مربع التقييم -->
+  <!-- مستطيل التقييم -->
   <div id="ratingBox">
     <p>قيّم الموقع:</p>
     <div class="stars" id="stars">
@@ -63,6 +63,7 @@
     <p id="thankMsg">شكراً على تقييمك!</p>
   </div>
 
+  <!-- سكربت التفاعل -->
   <script>
     document.addEventListener("DOMContentLoaded", function () {
       const rateBtn = document.getElementById('rateBtn');
@@ -75,11 +76,16 @@
         ratingBox.classList.toggle('active');
       });
 
-      stars.forEach(star => {
+      stars.forEach((star, index) => {
+        star.addEventListener('mouseenter', () => {
+          stars.forEach((s, i) => s.classList.toggle('hovered', i <= index));
+        });
+        star.addEventListener('mouseleave', () => {
+          stars.forEach(s => s.classList.remove('hovered'));
+        });
         star.addEventListener('click', () => {
-          const val = parseInt(star.getAttribute('data-value'));
           stars.forEach(s => s.classList.remove('selected'));
-          for (let i = 0; i < val; i++) {
+          for (let i = 0; i <= index; i++) {
             stars[i].classList.add('selected');
           }
           thankMsg.style.display = 'block';
