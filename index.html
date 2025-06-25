@@ -103,10 +103,15 @@
     <p>للتواصل: 016713319</p>
  </footer>
   
-<!-- ⭐ زر التقييم -->
-<button id="rateBtn" title="قيّم الموقع">⭐</button>
+<!-- 🔘 زر التقييم -->
+<div id="rateContainer">
+  <button id="rateBtn">
+    <span>قيّم صفحتنا</span>
+    <span class="starCircle">⭐</span>
+  </button>
+</div>
 
-<!-- 📦 مربع التقييم -->
+<!-- 📦 مستطيل التقييم -->
 <div id="ratingBox">
   <p>قيّم الموقع:</p>
   <div class="stars" id="stars">
@@ -116,36 +121,39 @@
     <span data-value="4">★</span>
     <span data-value="5">★</span>
   </div>
-  <p id="visits">عدد الزيارات: <strong>1284</strong></p>
-  <p id="avgRating">متوسط التقييم: <strong>4.3</strong> / 5</p>
+  <p id="visits">عدد الزوار: <strong>1452</strong></p>
+  <p>متوسط التقييم: <strong>4.7</strong> / 5</p>
 </div>
-  
+
 <script>
   const rateBtn = document.getElementById('rateBtn');
   const ratingBox = document.getElementById('ratingBox');
   const stars = document.querySelectorAll('#stars span');
-  const avgDisplay = document.getElementById('avgRating');
+  const visitsDisplay = document.getElementById('visits');
 
-  let ratingTotal = 21.5; // مجموع التقييمات (للحساب فقط)
-  let ratingCount = 5;    // عدد الأشخاص المقيّمين مبدئياً
-
+  // ⭐ إظهار وإخفاء مربع التقييم
   rateBtn.addEventListener('click', () => {
     ratingBox.style.display = (ratingBox.style.display === 'block') ? 'none' : 'block';
   });
 
+  // ⭐ تحديد النجوم (بدون حساب فعلي)
   stars.forEach(star => {
     star.addEventListener('click', () => {
       const val = parseInt(star.getAttribute('data-value'));
       stars.forEach(s => s.classList.remove('selected'));
       for (let i = 0; i < val; i++) stars[i].classList.add('selected');
-
-      ratingTotal += val;
-      ratingCount++;
-      const avg = (ratingTotal / ratingCount).toFixed(1);
-      avgDisplay.innerHTML = `متوسط التقييم: <strong>${avg}</strong> / 5`;
       alert(`شكراً على تقييمك ${val} نجوم!`);
     });
   });
+
+  // 👁‍🗨 عداد زوار وهمي يتحرك تدريجيًا
+  let visitors = Math.floor(1000 + Math.random() * 500);
+  function updateVisitors() {
+    visitors += Math.floor(Math.random() * 3); // زيادة وهمية كل 4 ثواني
+    visitsDisplay.innerHTML = `عدد الزوار: <strong>${visitors}</strong>`;
+  }
+  updateVisitors();
+  setInterval(updateVisitors, 4000);
 </script>
 
 </body>
