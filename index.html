@@ -58,12 +58,9 @@
 
   <!-- سكربت العرض التلقائي والإغلاق -->
   <script>
-    window.onload = function () {
-      document.getElementById("popupAd").style.display = "flex";
-    }
-    function closePopup() {
-      document.getElementById("popupAd").style.display = "none";
-    }
+  document.addEventListener("DOMContentLoaded", function () {
+  document.getElementById("popupAd").style.display = "flex";
+});
   </script>
 
 </body>
