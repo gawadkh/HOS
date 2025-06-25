@@ -1,61 +1,78 @@
+/* ✅ تنسيق عام للصفحة */
 body {
-    font-family: Arial, sans-serif;
-    text-align: center;
-    background-color: #f8f8f8;
-    color: #333;
+  margin: 0;
+  font-family: "Arial", sans-serif;
+  background-color: #f8f8f8;
+  direction: rtl;
 }
 
 header {
-    background-color: #FFD700;
-    padding: 20px;
+  text-align: center;
+  padding: 20px;
+  background-color: #fff;
+}
+
+header img {
+  max-width: 100%;
+  height: auto;
 }
 
 h1 {
-    font-size: 40px;
-    color: white;
-    text-shadow: 0 0 10px black;
+  font-size: 2rem;
+  margin: 10px 0 5px;
+  color: #333;
 }
 
 .welcome {
-    font-size: 22px;
-    font-weight: bold;
-    margin-top: 10px;
+  font-size: 1.2rem;
+  color: #666;
 }
 
+/* ✅ قسم التصنيفات */
 .categories {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
   gap: 20px;
-  padding: 15px;
+  padding: 20px;
 }
 
 .category {
   width: 220px;
+  background-color: #fff;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
   text-align: center;
+  transition: transform 0.3s;
+}
+
+.category:hover {
+  transform: scale(1.05);
 }
 
 .category img {
-    max-width: 100%;
-    height: auto;
+  width: 100%;
+  height: auto;
 }
 
-.category a {
-    text-decoration: none;
-    color: black;
-    font-size: 18px;
-    font-weight: bold;
+.category p {
+  padding: 10px;
+  margin: 0;
+  font-size: 1.1rem;
+  color: #333;
 }
 
+/* ✅ الفوتر */
 footer {
-    background-color: #333;
-    color: white;
-    padding: 10px;
-    margin-top: 20px;
-}
+  text-align: center;
+  background-color: #eee;
+  padding: 20px;
+  font-size: 0.9rem;
+  color: #555;
 }
 
-/* نافذة منبثقة */
+/* ✅ نافذة منبثقة */
 .popup {
   position: fixed;
   top: 0;
@@ -77,7 +94,6 @@ footer {
   text-align: center;
   position: relative;
   box-shadow: 0 0 15px rgba(0,0,0,0.4);
-  direction: rtl;
 }
 
 .popup-image {
@@ -104,4 +120,20 @@ footer {
 
 .close:hover {
   color: #000;
+}
+
+/* ✅ تحسين التوافق مع الشاشات الصغيرة */
+@media (max-width: 768px) {
+  .category {
+    width: 100%;
+  }
+
+  .popup-content {
+    width: 90%;
+    padding: 15px;
+  }
+
+  h1, h2, p {
+    font-size: 1rem;
+  }
 }
