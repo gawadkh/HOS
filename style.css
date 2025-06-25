@@ -1,10 +1,10 @@
 body {
   font-family: Arial, sans-serif;
-  text-align: center;
   background-color: #f8f8f8;
   color: #333;
   margin: 0;
   padding: 0;
+  text-align: center;
 }
 
 /* الرأس */
@@ -13,10 +13,10 @@ header {
   padding: 20px;
 }
 header img {
-  display: block;
-  margin: 0 auto 10px;
   max-width: 100%;
   height: auto;
+  margin: 0 auto 10px;
+  display: block;
 }
 h1 {
   font-size: 36px;
@@ -44,7 +44,6 @@ h1 {
   border-radius: 10px;
   box-shadow: 0 0 10px gray;
   width: 200px;
-  text-align: center;
   transition: transform 0.3s ease;
 }
 .category:hover {
@@ -69,7 +68,7 @@ footer {
   margin-top: 30px;
 }
 
-/* منبثق الإعلان */
+/* الإعلان المنبثق */
 #popup {
   position: fixed;
   top: 0; left: 0;
@@ -84,8 +83,8 @@ footer {
   background: #fff;
   padding: 20px;
   border-radius: 10px;
-  max-width: 90%;
   width: 350px;
+  max-width: 90%;
   text-align: center;
   box-shadow: 0 0 10px rgba(0,0,0,0.2);
 }
@@ -140,11 +139,12 @@ footer {
   font-size: 18px;
 }
 
-/* مربع التقييم */
+/* مستطيل التقييم */
 #ratingBox {
   opacity: 0;
   visibility: hidden;
   transform: translateY(20px);
+  transition: all 0.3s ease;
   position: fixed;
   bottom: 90px;
   right: 20px;
@@ -156,8 +156,9 @@ footer {
   box-shadow: 0 4px 16px rgba(0,0,0,0.3);
   text-align: center;
   font-weight: bold;
-  transition: all 0.3s ease;
+  z-index: 998;
 }
 #ratingBox.active {
   opacity: 1;
   visibility: visible;
+  transform: translateY(
