@@ -135,3 +135,26 @@ footer {
         font-size: 14px;
     }
 }
+.floating-button {
+    position: fixed;
+    bottom: 20px;
+    left: 20px; /* يمكنك تغييره لـ right إذا أردته في الزاوية اليمنى */
+    width: 55px;
+    height: 55px;
+    background-color: #d10024;
+    color: white;
+    font-size: 32px;
+    border: none;
+    border-radius: 50%;
+    box-shadow: 0 0 10px gray;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    z-index: 1000;
+    transition: background-color 0.3s;
+}
+
+.floating-button:hover {
+    background-color: #a8001c;
+}
